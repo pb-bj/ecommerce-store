@@ -1,0 +1,137 @@
+@import '../../styles//mixins.scss';
+.header {
+    background: #000;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+        @include lg {
+            max-width: 100%;
+        }
+
+    .nav-menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        width: 100%;
+        margin: 0 18px;
+        position: relative;
+            @include lg {
+                .nav-menu { 
+                    margin: 0 55px;
+                }
+
+            @include xl {
+                max-width: 1280px;
+                width: 100%;
+                margin: 0 auto;
+            }
+                .hamBurger-menu { 
+                    .menu  {
+                        display: none;
+
+                    }
+                }
+            }
+        
+        .whislistIcon {
+            display: none;
+                @include lg {
+                    display: block;
+                    cursor: pointer;
+                    font-size:25px ;
+                }
+        }
+
+        .searchBox-Wrapper {
+            display: none;
+                @include lg { display: block; }
+        .searchBox {
+            display: flex;
+            align-items: center;
+            
+            input {
+                position: relative;
+                width: 300px;
+                padding: 8px 16px;
+                // border: none;
+                outline: none;
+            }
+            .searchIcon {
+                position: absolute;
+                // right: -50px
+                left: 50%;
+                font-size: 25px;
+            }
+        }
+    }
+
+        .logo {
+            font-size: 18px;
+                @include lg {
+                    font-size: 20px;
+                    display: flex;
+                    flex-grow:1 ;
+                // }
+
+        }
+    }
+
+        .hamBurger-menu {
+            display: block;
+
+            .menu {
+                font-size: 30px;
+                cursor: pointer;
+            }
+        }
+
+        .login-register {
+            display: none;
+                @include lg {
+                    display: block;
+                    cursor: pointer;
+                }
+        }
+
+        .cartIcon, .whislistIcon {
+            position: relative;
+            .icon {
+                font-size: 25px;
+                cursor: pointer;
+            }
+            .quantity {
+                position: absolute;
+                top: -8px;
+                right: -12px;
+                background: rgb(1, 167, 1);
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                font-size: 12px;
+                text-align: center;
+                color: #FFF;
+                padding: auto;
+            }
+        }
+
+
+      
+    }
+    .bottom-nav-menu{
+        display: none;
+        margin-top: 8px;
+        color: #FFF;
+        font-size: 14px;
+            @include lg {
+                display: block;
+            }
+    }
+}

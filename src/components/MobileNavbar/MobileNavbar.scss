@@ -1,0 +1,47 @@
+@import '../../styles/mixins.scss';
+
+.mobile-navbar {
+    position: absolute;
+    top: 54.25px;
+    z-index: 999;
+    background: #000;
+    padding: 10px 0px;
+    border-radius:  0 0 5px 5px;
+   
+            .shop-items{
+                display: flex;
+                align-items: center;
+                position: relative;
+                transition: 0.8s ease;
+                    &:hover {
+                        .inner-shop-items {
+                            display: block;
+                            background: #000;
+                            padding: 10px 0;
+                            position: absolute;
+                            top: -10px;
+                            right: -160px;
+                          
+                        }
+                    }
+                    .inner-shop-items { display: none;}
+
+            }   
+    div {
+        margin-bottom: 15px;
+        width: 165px;
+        padding: 8px 10px;
+        cursor: pointer;
+        &:hover {
+            background: #3b3b3b;
+            transition: 0.3s ease;
+        }
+            @include lg {
+                .mobile-navbar {
+                    div {
+                        display: none;
+                    }
+                }
+            }
+    }
+}

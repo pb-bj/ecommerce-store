@@ -1,0 +1,12 @@
+@import '../../styles/mixins.scss';
+
+
+
+.btn-primary {
+    cursor: pointer;
+    outline: none;
+        border: none;
+        background-color: forestgreen;
+        color: #FFF;
+        padding: 8px 16px;
+}

@@ -1,0 +1,44 @@
+@import '../../styles/mixins.scss';
+
+.cart-item {
+    display: flex;
+    align-items: center;   
+    gap: 10px 20px;
+    padding: 12px 8px;
+    color: green;
+    margin-top: 8px;
+    margin-bottom: 25px;
+     &:hover {
+        background: #f8f8f8;
+        cursor: pointer;
+     }
+
+    .cart-content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .cart-title {
+            font-size: 14px;
+            width: 270px;
+            color: #000;
+        }
+    }
+
+}
+
+.empty-cart {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     width: 100%;
+     height: 500px;
+
+     .empty-cart-icon {
+         font-size: 150px;
+         color: #d3d2d2;
+         margin-bottom: 25px;
+     }
+
+ }

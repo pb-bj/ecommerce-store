@@ -1,0 +1,39 @@
+@import '../../styles/mixins.scss';
+
+.wishlist-container {
+    margin-top: 70px;
+    .top-wishlist {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 0px;
+        background: #000;
+        color: #FFF;
+    }
+
+    .empty-wishlist {
+        display: flex;
+        flex-direction: column;
+        gap:20px ;
+        align-items: center;
+        justify-content: center;
+        margin-top: 85px;
+
+        .wishlistIcon {
+            text-align: center;
+            font-size: 92px;
+            color: rgb(222, 241, 250);
+            padding: 12px 0;
+        }
+
+        .wislist-text {
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            padding: 8px 16px;
+                
+            
+        }
+    }
+}
