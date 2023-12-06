@@ -3,9 +3,10 @@ import { CartContext } from '../../contexts/CartContext';
 import { useContext } from 'react';
 import { BsCartX } from "react-icons/bs";
 import { Button } from '../index';
+import { RiDeleteBin7Line } from "react-icons/ri";
 
 const CartItem = () => {
-    const { cart } = useContext( CartContext );
+    const { cart, deleteCartItem } = useContext( CartContext );
   return (
     <>
     { cart.length > 0 ? (
@@ -20,6 +21,12 @@ const CartItem = () => {
                     <div className='cart-content'>
                         <div className='cart-title'>{title}</div>
                         <div>{price}</div>
+                    </div>
+                    <div title='remove'>
+                        <RiDeleteBin7Line 
+                            onClick={() => deleteCartItem(id) }
+                            style={{ color: '#000', fontSize : '22px'}}/>
+                            
                     </div>
                 </div>
             )
