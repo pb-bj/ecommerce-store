@@ -14,14 +14,10 @@ const Slidebar = ({ setShowSidebar} ) => {
                     <IoMdClose onClick={() => setShowSidebar(false)} /> 
                 </div>        
             </div>
-
-           
-
             <div>
                 <CartItem />
             </div>
-        {/* </div> */}
-
+            
     </div>
   )
 }

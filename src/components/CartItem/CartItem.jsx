@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { BsCartX } from "react-icons/bs";
 import { Button } from '../index';
 import { RiDeleteBin7Line } from "react-icons/ri";
+import { Link } from 'react-router-dom';
 
 const CartItem = () => {
     const { cart, deleteCartItem } = useContext( CartContext );
@@ -31,6 +32,17 @@ const CartItem = () => {
                 </div>
             )
         })}
+
+                <div className='cart-btn'>
+                    <Link to="/cart">
+                    <div className='vc-btn'>
+                            <Button label="View Cart" type='button' className="btn-primary btn-secondary" />
+                    </div>
+                    </Link>
+                    <div>
+                        <Button label="Checkout" type='button' className="btn-primary btn-secondary" />
+                    </div>
+                </div>
     </>
     ) : 
      <div className='empty-cart'>

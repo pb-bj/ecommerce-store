@@ -42,3 +42,24 @@
      }
 
  }
+
+ .cart-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 5px;
+    width: 100%;
+
+        .vc-btn {
+            background: transparent;
+            color: #000;
+            outline: 1px solid #CCC;
+             &:hover {
+                background: #000;
+                color: #FFF;
+                transition: 0.3s ease;
+             }
+        }
+
+
+ }
