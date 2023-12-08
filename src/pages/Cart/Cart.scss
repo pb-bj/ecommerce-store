@@ -1,67 +1,97 @@
 @import '../../styles/mixins.scss';
 
-// .cart-section {
-//     margin: 105px 18px 10px 18px;
-//     .cart-main {
-//         display: flex;
-//         align-items: center;
-//         gap: 10px;
-//         border: 1px solid red;
-
-//         .cart-content {
-//             .cart-content-top {
-//                 display: flex;
-//                 // justify-content:;
-//                 .title {
-//                     font-size: 14px;
-//                     color: gray;
-//                     font-weight:500;
-//                     max-width: 250px;
-
-//                 }
-//             }
-//         }
-
-       
-//     }
-// }
-
 .cart-section {
     margin: 105px 18px 10px 18px;
 
     .cart-main {
         display: flex;
         flex-direction: column-reverse;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         gap: 15px;
+        margin: 0 auto;;
 
             @include lg {
                 flex-direction: row;
             }
         .cart-left {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            width: 100%;
+            border: 1px solid #CCC;
+                padding: 25px 16px;
+                .cart-wrapper {
+                    display: flex;
+                    margin-bottom: 40px;
+                    justify-content: space-evenly;
+                    @include lg {
+                        justify-content: space-between;
+                    }
+                    // gap: 10px;
+                        .cart-image {
+                            img {
+                                width: 100px;
+                                object-fit: contain;
+                            }
+                        }
 
+                        .cart-content {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            .cart-title {
+                                font-size: 15px;
+                                font-weight: 400;
+                                max-width: 185px;
+                                width: 100%;
+                                    @include lg {
+                                        max-width: 300px;
+                                        width: 100%;
+                                    }
+                            }
+
+                            .cart-price {
+                                font-size: 20px;
+                                font-weight: 600;
+                            }
+                        }
+                }
         }
 
         .cart-right {
+            max-width: 600px;
+            width: 100%;
+                @include lg {
+                    // position: fixed;
+                    max-width: 400px;
+                    width: 100%;
+                }
             .wrapper {
                 border: 1px solid #CCC;
-                padding: 11px 16px;
+                padding: 20px 16px;
                     .subtotal, .coupon-section {
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
                         margin: 30px 0;
                     }
-                    .payment-image {
-                        display: flex;
-                        // img {
-                        //     font-size: 20px;
-                        // }
-                        // width: 200px;
+                    .coupon-section {
+                        input {
+                          border: 1px solid #CCC;
+                          padding: 5px;
+                        }
                     }
+                }
+                .payment {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    margin: 8px 0 ;
+                       
+                }
             }
-        }
 
     }
 
