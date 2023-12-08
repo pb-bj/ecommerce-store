@@ -60,14 +60,14 @@ const Header = () => {
               <span className='quantity'>0</span>
           </div>
       </nav>
-          <div className='bottom-nav-menu'>
+          {/* <div className='bottom-nav-menu'>
             <div>
               <Link to="/category">Men Fashion</Link>
             </div>
             <div>
               <Link to="/category">Women Fashion</Link>
             </div>
-          </div>
+          </div> */}
               { showSidebar && <Slidebar setShowSidebar={setShowSidebar} /> }
       {/* <Slidebar /> */}
     </header>

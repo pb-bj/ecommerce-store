@@ -6,6 +6,7 @@ import { Button } from '../index';
 import { RiDeleteBin7Line } from "react-icons/ri";
 import { Link } from 'react-router-dom';
 
+
 const CartItem = () => {
     const { cart, deleteCartItem } = useContext( CartContext );
   return (
