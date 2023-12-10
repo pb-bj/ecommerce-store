@@ -40,9 +40,6 @@ const CartItem = () => {
                             <Button label="View Cart" type='button' className="btn-primary btn-secondary" />
                     </div>
                     </Link>
-                    <div>
-                        <Button label="Checkout" type='button' className="btn-primary btn-secondary" />
-                    </div>
                 </div>
     </>
     ) : 

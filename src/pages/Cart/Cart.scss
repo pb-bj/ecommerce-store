@@ -56,6 +56,26 @@
                                 font-weight: 600;
                             }
                         }
+                        .cart-counter {
+                            display:  flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                                .cart-counter-top {
+                                    display: flex;
+                                    font-size: 16px;
+                                    gap: 10px;
+                                }
+
+                                .cart-counter-bottom {
+                                    display: flex;
+                                    gap: 10px;
+                                }
+
+                                .cart-counter-top, .cart-counter-bottom {
+                                    font-size: 20px;
+                                    cursor: pointer;
+                                }
+                        }
                 }
         }
 
