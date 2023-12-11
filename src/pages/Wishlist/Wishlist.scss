@@ -1,7 +1,39 @@
 @import '../../styles/mixins.scss';
 
 .wishlist-container {
-    margin-top: 70px;
+    margin: 105px 18px 10px 18px;
+        
+    .wishlist-main {
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: center;
+        gap: 20px;
+        .left {
+            display: flex;
+            gap: 20px;
+            .left-content {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                max-width: 300px;
+                width: 100%;
+                .title {
+                   
+                }
+                .desc {
+                    font-size: 14px;
+                    color: #5c5b5b;
+                }
+            }
+        }   
+        .right {
+
+        }
+
+    }
+
+        //empty
     .top-wishlist {
         display: flex;
         flex-direction: column;

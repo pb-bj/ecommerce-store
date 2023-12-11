@@ -2,30 +2,47 @@ import './Wishlist.scss';
 import { Link } from 'react-router-dom';
 import { Button } from '../../components';
 import { FaRegHeart } from "react-icons/fa6";
+import { IoMdClose } from "react-icons/io";
 import { WishListContext } from '../../contexts/WishListContext';
 import { useContext } from 'react';
 const Wishlist = () => {
   const {  wishList } = useContext(WishListContext);
   
   return (
-    <>
-    <div className='wishlist-container'>
+    <section className='wishlist-container'>
+    <div className='wishlist-main'>
     { wishList.length > 0? ( 
       <>
-        { wishList.map(item => {
-          const { id, title, image} = item;
+      { wishList.map(item => {
+          const { id, title, image,description, price} = item;
           return (
-            <div key={id}>
-              <div>
-                <img src={image} width={55} alt="" />
+            <>
+            <div className='left' key={id}>
+              <div><img src={image} width={55} alt="" /></div>
+              <div className='left-content'>
+                <div className='title'>{title}</div>
+                <div className='desc'>{description}</div>
+
               </div>
-              <div>{title}</div>
             </div>
+            <div className='right'>
+              <div><IoMdClose /></div>
+              <div>{price}</div>
+              <div>Add</div>
+            </div>
+            </>
+
+            // <div key={id} className=''>
+            //   <div>
+            //     <img src={image} width={55} alt="" />
+            //   </div>
+            //   <div>{title}</div>
+            // </div>
           
           )
             
         })}
-      </>
+       </>
     ) : ( 
       <>
       <div className="top-wishlist">
@@ -51,7 +68,7 @@ const Wishlist = () => {
       </>
       ) }
       </div>
-  </>
+  </section>
   )}
 
 export default Wishlist
