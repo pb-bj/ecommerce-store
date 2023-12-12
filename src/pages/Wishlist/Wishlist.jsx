@@ -5,15 +5,16 @@ import { FaRegHeart } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import { WishListContext } from '../../contexts/WishListContext';
 import { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext';
 const Wishlist = () => {
-  const {  wishList } = useContext(WishListContext);
+  const {  wishList, removeWishList } = useContext(WishListContext);
+  const {addToCart } = useContext(CartContext);
   
   return (
     <section className='wishlist-container'>
     <div className='wishlist-main'>
     { wishList.length > 0? ( 
       <>
-      <h3></h3>
       { wishList.map(item => {
           const { id, title, image,description, price, rating} = item;
           return (
@@ -27,9 +28,11 @@ const Wishlist = () => {
               </div>
             </div>
             <div className='right'>
-              <div className='icon'><IoMdClose /></div>
+              <div className='icon' onClick={() => removeWishList(id)}><IoMdClose /></div>
               <div>{price}</div>
-              <Button label="Add to cart" className="btn-primary" />
+              <div onClick={() => addToCart(id,product)}>
+                <Button label="Add to cart" className="btn-primary" />
+              </div>
             </div>
             </div>
           )
