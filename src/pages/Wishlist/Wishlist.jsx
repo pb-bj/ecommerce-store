@@ -13,32 +13,25 @@ const Wishlist = () => {
     <div className='wishlist-main'>
     { wishList.length > 0? ( 
       <>
+      <h3></h3>
       { wishList.map(item => {
-          const { id, title, image,description, price} = item;
+          const { id, title, image,description, price, rating} = item;
           return (
-            <>
+            <div className='wrapper'>
             <div className='left' key={id}>
               <div><img src={image} width={55} alt="" /></div>
               <div className='left-content'>
                 <div className='title'>{title}</div>
                 <div className='desc'>{description}</div>
-
+                <div>Rating ({rating.rate})</div>
               </div>
             </div>
             <div className='right'>
-              <div><IoMdClose /></div>
+              <div className='icon'><IoMdClose /></div>
               <div>{price}</div>
-              <div>Add</div>
+              <Button label="Add to cart" className="btn-primary" />
             </div>
-            </>
-
-            // <div key={id} className=''>
-            //   <div>
-            //     <img src={image} width={55} alt="" />
-            //   </div>
-            //   <div>{title}</div>
-            // </div>
-          
+            </div>
           )
             
         })}

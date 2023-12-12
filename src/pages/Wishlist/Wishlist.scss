@@ -8,26 +8,59 @@
         flex-direction: column;
         justify-content:flex-start;
         align-items: center;
-        gap: 20px;
-        .left {
+        gap: 10px 20px;
+        .wrapper {
             display: flex;
-            gap: 20px;
-            .left-content {
+            flex-direction: column;
+            // margin-bottom: 2px;
+            border: 1px solid rgb(192, 191, 191);
+            padding: 40px 16px;
+                @include md {
+                    flex-direction: row;
+                    gap: 20px;
+                }
+            .left {
                 display: flex;
-                flex-direction: column;
-                gap: 10px;
-                max-width: 300px;
-                width: 100%;
-                .title {
-                   
+                gap: 20px;
+             
+                    .left-content {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        max-width: 300px;
+                        width: 100%;
+                        @include md {
+                            max-width: 500px;
+                        }
+                        @include lg {
+                            max-width: 650px;
+                        }
+                        .title {
+                           
+                        }
+                        .desc {
+                            font-size: 14px;
+                            color: #5c5b5b;
+                        }
+                    }
+                }   
+                .right {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 22px 0;
+                    gap: 30px;
+                        @include md {
+                            flex-direction: column;
+                            justify-items:center;
+                            margin: 0;
+                        }
+                        .icon {
+                            font-size: 20px;
+                            cursor: pointer;
+                        }
                 }
-                .desc {
-                    font-size: 14px;
-                    color: #5c5b5b;
-                }
-            }
-        }   
-        .right {
 
         }
 
