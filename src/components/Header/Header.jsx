@@ -19,9 +19,7 @@ const Header = () => {
     return acc + curr.quantity;
   }, 0)
 
-  const countWishList = wishList.reduce((acc, curr) => {
-    return acc + curr.quantity;
-  }, 0)
+  const countWishList = wishList.reduce((count) => count + 1,0 );
 
   console.log(wishList)
   return (

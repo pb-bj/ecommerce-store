@@ -9,6 +9,7 @@
     right: 0;
     top: 0;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    z-index: 999;
     
     @include md { width: 455px; }
     @include lg {
