@@ -5,14 +5,25 @@ import { IoMdClose } from "react-icons/io";
 // import { MdOutlineSearch } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
-
 import { MobileNavbar, Slidebar } from './../index'
-import { useState } from 'react';
-
+import { useState, useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext';
+import { WishListContext } from '../../contexts/WishListContext';
 const Header = () => {
   const [ showSidebar, setShowSidebar ] = useState(false);
   const [ menuOpen, setMenuOpen ] = useState(false);
+  const { cart } = useContext(CartContext);
+  const { wishList } = useContext(WishListContext);
 
+  const countCart = cart.reduce((acc, curr) => {
+    return acc + curr.quantity;
+  }, 0)
+
+  const countWishList = wishList.reduce((acc, curr) => {
+    return acc + curr.quantity;
+  }, 0)
+
+  console.log(wishList)
   return (
     <header className='header'>
       <nav className='nav-menu'>
@@ -48,7 +59,7 @@ const Header = () => {
             <Link to="/wishlist" style={{ color: '#FFF'}}>
             <FaRegHeart  className='icon'/>
             </Link>
-              <span className='quantity'>0</span>
+              <span className='quantity'>{countWishList}</span>
 
           </div>
 
@@ -57,7 +68,7 @@ const Header = () => {
             <IoBagOutline 
               onClick={() => setShowSidebar(!showSidebar)}
               className='icon' />
-              <span className='quantity'>0</span>
+              <span className='quantity'>{countCart}</span>
           </div>
       </nav>
           {/* <div className='bottom-nav-menu'>
