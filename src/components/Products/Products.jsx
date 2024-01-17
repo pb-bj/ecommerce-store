@@ -22,7 +22,7 @@ const Products = ({ products }) => {
                     </div>
                 </div>
                 <div className='product-bottom'>
-                  <Link to="/product/:id">
+                  <Link to={`/product/${id}`}>
                     <div className='product-title'>
                       { title.length <= maxLength?  title : title.substring(0, maxLength - ellipsis.length) + ellipsis  }
                     </div>
@@ -34,7 +34,7 @@ const Products = ({ products }) => {
                         label="+" 
                         className="btn-primary" 
                         type='button'
-                        onClick={ () => addToCart(id, product) }  
+                        onClick={ () => addToCart(id, product) } 
                       /> 
                     </div>
                   </div>
