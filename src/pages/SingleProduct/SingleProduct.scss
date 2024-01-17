@@ -6,6 +6,7 @@
     flex-direction:column;
     align-items: center;
     justify-content: space-between;
+    padding-top: 40px;
     gap: 20px;
     @include md {
         flex-direction: row;
@@ -29,9 +30,19 @@
             max-width: 550px;
             width: 100%;
         }
+        .product-category {
+            color: rgb(150, 149, 149);
+            font-weight: 300;
+            font-size: 14px;
+        }
         .product-title {
             font-size: 20px;
             font-weight: 700;
+            padding: 10px 0px;
+            line-height: 30px;
+                @include md {
+                    font-size: 25px;
+                }
         }
 
         .details {
@@ -40,8 +51,14 @@
                 gap: 50px;
             }
             .product-price {
-                color: green;             
+                color: green;  
+                font-size: 20px;           
             }
+                @include md {
+                    .product-price {
+                        font-size: 20px;
+                    }
+                }
 
             // .product-reviews {
             //     .rate {
