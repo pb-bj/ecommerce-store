@@ -6,9 +6,15 @@ import { IoMdClose } from "react-icons/io";
 import { WishListContext } from '../../contexts/WishListContext';
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
+import { useNavigate } from 'react-router-dom';
 const Wishlist = () => {
   const {  wishList, removeWishList } = useContext(WishListContext);
   const {addToCart } = useContext(CartContext);
+  const navigate = useNavigate();
+
+  const handleBackToShopPage = () => {
+      navigate('/');
+  }
   
   return (
     <section className='wishlist-container'>
@@ -60,7 +66,11 @@ const Wishlist = () => {
             </span>
             </div>
             </div>
-        <Button label="RETURN TO SHOP" className='btn-primary' />
+        <Button 
+          label="RETURN TO SHOP" 
+          className='btn-primary'
+          onClick={ handleBackToShopPage } 
+        />
       </div>
       </>
       ) }

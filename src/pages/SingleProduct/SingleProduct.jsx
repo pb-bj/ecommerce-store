@@ -17,7 +17,7 @@ const SingleProduct = () => {
   });
   
 
-  const { category,title, price, image, description, rating : { count, rate} } = filteredProduct;
+  const { category, title, price, image, description, rating : { count, rate} } = filteredProduct;
   return (
     <div style={{ marginTop : '100px'}}>
       <div className="product-container">

@@ -9,11 +9,18 @@ import { MobileNavbar, Slidebar } from './../index'
 import { useState, useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
 import { WishListContext } from '../../contexts/WishListContext';
+import { ProductsContext } from '../../contexts/ProductsContext';
+import Search from './Search/Search';
+
 const Header = () => {
   const [ showSidebar, setShowSidebar ] = useState(false);
   const [ menuOpen, setMenuOpen ] = useState(false);
   const { cart } = useContext(CartContext);
   const { wishList } = useContext(WishListContext);
+
+
+  // search functionalities 
+    const { products } = useContext(ProductsContext);
 
   const countCart = cart.reduce((acc, curr) => {
     return acc + curr.quantity;
@@ -40,11 +47,13 @@ const Header = () => {
           {/* search-box */}
           <div className='searchBox-Wrapper'>
           <div className='searchBox'>
-            <input 
+            {/* <input 
               type="text"
               placeholder='Search for products'
               autoComplete='off' 
-              />
+              /> */}
+              <Search products={products} />
+
             {/* <MdOutlineSearch className='searchIcon' /> */}
           </div>
           </div>
