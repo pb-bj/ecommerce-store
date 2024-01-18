@@ -60,26 +60,37 @@
             
             input {
                 position: relative;
-                width: 500px;
-                padding: 8px 16px;
+                width: 502px;
+                padding: 8px 17px;
                 outline: none;
             }
             .product {
                 position: absolute;
-                top: 40px;
-                background-color: rgb(0, 0, 0);
+                top: 39px;
+                background-color: white;
                 max-width: 500px;
                 width: 100%;
-                padding: 8px 16px;
 
                 .searchedProducts {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    gap: 10px;
                     padding-bottom: 30px;
                     padding-top: 8px;
                     cursor:pointer;
-                    &:hover {
-                        text-decoration: underline;
+                        &:hover {
+                            text-decoration: underline;
+                            background: #f7f7f7;
+                        }
 
+                    .searched-title {
+                        font-size: 15px;
+                        font-weight: 400;
+                        width: 100%;
+                        max-width: 320px;
                     }
+                    
                 } 
             }
     }

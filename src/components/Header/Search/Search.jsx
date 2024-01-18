@@ -26,11 +26,14 @@ const Search = ({ products }) => {
      {/* { showResult && (  */}
       <ul className="product">
           { filteredProducts.map((product) => (
-              <>
               <Link to={`/product/${product.id}`}> {/* for routing single page */}
-                <li className="searchedProducts" key={product.id}>{product.title}</li>
+              <li key={product.id} className="searchedProducts">
+              <div className="image">
+                <img src={product.image} alt="" width={55} />
+              </div>
+                <div className="searched-title" style={{ color: '#000'}}>{product.title}</div>
+              </li>
               </Link>
-              </>
           ))}
         </ul>
       {/* )} */}
