@@ -73,6 +73,15 @@
                         display: flex;
                         font-size: 16px;
                         gap: 10px;
+                            .increaseCounter,
+                            .decreaseCounter  {
+                                width: 25px;
+                                background-color: #000;
+                                color:#FFF ;
+                                cursor: pointer;
+                                outline: none;
+                                border: none;
+                            }
                     }
 
                     .cart-counter-bottom {

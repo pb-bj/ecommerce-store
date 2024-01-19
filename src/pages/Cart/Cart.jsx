@@ -36,9 +36,9 @@ const Cart = () => {
                   </div>
                   <div className='cart-counter'>
                     <div className='cart-counter-top'>
-                        <button onClick={() => decreaseCart(item.id)}>-</button>
+                        <button className="decreaseCounter" onClick={() => decreaseCart(item.id)}>-</button>
                         <span>{item.quantity}</span>
-                        <button onClick={() => incrementCart(item.id)}>+</button>
+                        <button className="increaseCounter" onClick={() => incrementCart(item.id)}>+</button>
                     </div>
                     <div className='cart-counter-bottom'>
                         <div onClick={() => deleteCartItem(item.id)} > 

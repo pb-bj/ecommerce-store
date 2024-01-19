@@ -2,20 +2,21 @@ import { useParams } from 'react-router-dom';
 import { ProductsContext } from '../../contexts/ProductsContext';
 import './SingleProduct.scss';
 import { useContext } from 'react';
-// import { CartContext } from '../../contexts/CartContext'
+import { LiaStarSolid } from "react-icons/lia";
+import { CartContext } from '../../contexts/CartContext'
 import Button from '../../components/Button/Button';
 
 const SingleProduct = () => {
   const { productid } = useParams();
   const { products} = useContext(ProductsContext);
-  // const { addToCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
   
   const filteredProduct = products.find((item) => {
     if( item.id === parseInt(productid)) {
       return item;
     } 
   });
-  
+
 
   const { category, title, price, image, description, rating : { count, rate} } = filteredProduct;
   return (
@@ -31,16 +32,23 @@ const SingleProduct = () => {
             <div className='product-wrapper'>
               <span className="product-price">${price}</span>
               <div className="product-reviews">
-                  <span className="rate">{rate}</span>
-                  <span className="count">{count}</span>
+                  <span className="rate"> 
+                  ({rate})
+
+                  <LiaStarSolid style={{ color: '#FFA732'}} />
+                   <LiaStarSolid style={{ color: '#FFA732'}} />
+                    <LiaStarSolid style={{ color: '#FFA732'}} />
+                     <LiaStarSolid style={{ color: '#FFA732'}} />
+                </span>
+                  <span className="count">{count} ratings</span>
             </div>
 
             </div>
             <div style={{ margin: '10px 0px'}}>
-              <Button 
+              <Button
                   label="Add to cart" 
                   className="btn-primary"
-                  // onClick={ addToCart(id,products)}
+                  onClick={() => addToCart(filteredProduct.id,filteredProduct)}
               />
             </div>
               <div className="product-description">

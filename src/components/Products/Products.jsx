@@ -7,7 +7,7 @@ import { CartContext } from '../../contexts/CartContext';
 const Products = ({ products }) => {
   const maxLength = 25;
   const ellipsis = '....';
-
+  
   const { addToCart } = useContext(CartContext);
   return (
     <div className='product-items'>

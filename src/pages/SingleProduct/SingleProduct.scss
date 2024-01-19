@@ -60,13 +60,15 @@
                     }
                 }
 
-            // .product-reviews {
-            //     .rate {
-            //     }
-            //     .count {
-
-            //     }
-            // }
+            .product-reviews {
+                display: flex;
+                gap: 5px;
+                font-size: 12px;
+                    @include md {
+                        gap: 50px;
+                        font-size: 16px;
+                    }
+            }
         }
 
         .product-description {

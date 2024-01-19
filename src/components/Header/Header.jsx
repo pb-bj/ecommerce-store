@@ -19,7 +19,7 @@ const Header = () => {
   const { wishList } = useContext(WishListContext);
 
 
-  // search functionalities 
+  // cart and wishlist product counter 
     const { products } = useContext(ProductsContext);
 
   const countCart = cart.reduce((acc, curr) => {

@@ -3,7 +3,9 @@ import './Footer.scss';
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer>
+      <p>&copy; { new Date().getFullYear()} Jhigu Store</p>
+    </footer>
   )
 }
 
