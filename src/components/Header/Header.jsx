@@ -2,7 +2,6 @@ import './Header.scss';
 import { IoMdMenu } from "react-icons/io";
 import { IoBagOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
-// import { MdOutlineSearch } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { MobileNavbar, Slidebar } from './../index'
@@ -15,19 +14,17 @@ import Search from './Search/Search';
 const Header = () => {
   const [ showSidebar, setShowSidebar ] = useState(false);
   const [ menuOpen, setMenuOpen ] = useState(false);
+
   const { cart } = useContext(CartContext);
   const { wishList } = useContext(WishListContext);
-
-
+  const { products } = useContext(ProductsContext);
+  
   // cart and wishlist product counter 
-    const { products } = useContext(ProductsContext);
-
   const countCart = cart.reduce((acc, curr) => {
     return acc + curr.quantity;
   }, 0)
 
   const countWishList = wishList.reduce((count) => count + 1,0 );
-
   // console.log(wishList)
   return (
     <header className='header'>
@@ -47,14 +44,7 @@ const Header = () => {
           {/* search-box */}
           <div className='searchBox-Wrapper'>
           <div className='searchBox'>
-            {/* <input 
-              type="text"
-              placeholder='Search for products'
-              autoComplete='off' 
-              /> */}
               <Search products={products} />
-
-            {/* <MdOutlineSearch className='searchIcon' /> */}
           </div>
           </div>
 
@@ -78,14 +68,7 @@ const Header = () => {
               <span className='quantity'>{countCart}</span>
           </div>
       </nav>
-          {/* <div className='bottom-nav-menu'>
-            <div>
-              <Link to="/category">Men Fashion</Link>
-            </div>
-            <div>
-              <Link to="/category">Women Fashion</Link>
-            </div>
-          </div> */}
+
               { showSidebar && <Slidebar setShowSidebar={setShowSidebar} /> }
       {/* <Slidebar /> */}
     </header>

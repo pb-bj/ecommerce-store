@@ -5,7 +5,6 @@ import {  CartItem } from '../index';
 const Slidebar = ({ setShowSidebar} ) => {
   return (
     <div className='slidebar'>
-        {/* <div className='content'> */}
             <div className='heading'>
                 <div className='sidebar-header'>
                     Shopping Cart

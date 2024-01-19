@@ -51,7 +51,7 @@ const Wishlist = () => {
       <div className="top-wishlist">
         <h1 style={{ fontSize : '45px', paddingTop: '35px'}}>Wishlist</h1>
         <span style={{ padding: '25px 0 15px 0'}}>
-          <Link to="/" style={{ color: '#FFF'}}>HOME</Link> / WISHLIST
+          <Link to="/" style={{ color: '#000'}}>HOME</Link> / WISHLIST
         </span>
       </div>
       <div className="empty-wishlist">

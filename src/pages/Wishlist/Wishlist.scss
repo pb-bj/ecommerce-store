@@ -35,9 +35,9 @@
                         @include lg {
                             max-width: 650px;
                         }
-                        .title {
+                        // .title {
                            
-                        }
+                        // }
                         .desc {
                             font-size: 14px;
                             color: #5c5b5b;
@@ -72,9 +72,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 15px 0px;
-        background: #000;
-        color: #FFF;
+        // padding: 15px 0px;
+        // background: #682f2f;
+        color: #000;
     }
 
     .empty-wishlist {
