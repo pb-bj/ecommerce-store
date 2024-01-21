@@ -9,7 +9,7 @@ const MobileNavbar = () => {
             <Link to="/" style={{ color : '#FFF'}}>SHOP</Link>
                {/* sub links */}
               <div className='inner-shop-items'>
-                <div><Link to="/category"  style={{ color : '#FFF'}}>Men Clothing</Link></div>
+                <div><Link to="men"  style={{ color : '#FFF'}}>Men Clothing</Link></div>
                 <div><Link to="/category"  style={{ color : '#FFF'}}>Women Clothing</Link></div>
               </div>
           </div>

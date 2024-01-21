@@ -1,18 +1,17 @@
 import './Home.scss';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ProductsContext } from '../../contexts/ProductsContext';
-import { Products } from '../../components';
-import { Link } from 'react-router-dom';
-
+import { Login, Products } from '../../components';
+import axios from 'axios';
+ 
 const Home = () => {
   const { products } = useContext(ProductsContext);
   return (
     <div className='home'>
         <div className='main-home'>
-          <Link to="/category">Men Fashion</Link>
-          <Link to="/category">Women Fashion</Link>
         </div>
        <Products products = {products} />
+       <Login />
     </div>
   )
 }

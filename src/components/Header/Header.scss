@@ -119,6 +119,7 @@
             display: none;
                 @include lg {
                     display: block;
+                    position: relative;
                     cursor: pointer;
                 }
         }

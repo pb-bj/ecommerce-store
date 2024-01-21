@@ -3,9 +3,11 @@ import { IoMdMenu } from "react-icons/io";
 import { IoBagOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa6";
+
 import { Link } from 'react-router-dom';
-import { MobileNavbar, Slidebar } from './../index'
+import { Login, MobileNavbar, Slidebar } from './../index'
 import { useState, useContext } from 'react';
+
 import { CartContext } from '../../contexts/CartContext';
 import { WishListContext } from '../../contexts/WishListContext';
 import { ProductsContext } from '../../contexts/ProductsContext';
@@ -14,6 +16,7 @@ import Search from './Search/Search';
 const Header = () => {
   const [ showSidebar, setShowSidebar ] = useState(false);
   const [ menuOpen, setMenuOpen ] = useState(false);
+  const [ login, setLogin ] = useState(false);
 
   const { cart } = useContext(CartContext);
   const { wishList } = useContext(WishListContext);
@@ -49,7 +52,10 @@ const Header = () => {
           </div>
 
           {/* login-register-details */}
-          <div className='login-register'>Login/Register</div>
+          <div className='login-register' onClick={() => setLogin(!login)}>
+              Login/Register
+          </div>
+         { login && <Login /> }
 
           {/* whislist-icons */}
           <div className='whislistIcon'>
