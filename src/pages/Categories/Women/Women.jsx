@@ -1,11 +1,7 @@
 import { Category } from "../../../components"
 
 const Women = () => {
-  return (
-    <div>
-        <Category header="Women's Categories" />
-    </div>
-  )
+  return <Category header="Women's Categories" categoryTitle="women's clothing"/>
 }
 
 export default Women

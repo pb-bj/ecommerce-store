@@ -1,9 +1,7 @@
-import React from 'react'
+import { Category } from '../../../components'
 
 const Electronics = () => {
-  return (
-    <div>Electronics</div>
-  )
+  return <Category header="Electronics Categories" categoryTitle="electronics"/>
 }
 
 export default Electronics

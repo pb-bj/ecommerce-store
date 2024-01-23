@@ -29,6 +29,7 @@ const CartItem = () => {
                             onClick={() => deleteCartItem(id) }
                             style={{ color: '#000', fontSize : '22px'}}/>
                             
+                            
                     </div>
                 </div>
             )
