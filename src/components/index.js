@@ -5,8 +5,8 @@ import Button from './Button/Button';
 import MobileNavbar from './MobileNavbar/MobileNavbar';
 import Products from './Products/Products';
 import CartItem from './CartItem/CartItem';
-import CategoryComponent from './CategoryComponent/Category';
 import Login from './Login-Signup/Login';
+import Category from './Category/Category';
 
 export {
     Header,
@@ -16,6 +16,6 @@ export {
     MobileNavbar,
     Products,
     CartItem,
-    CategoryComponent,
+    Category,
     Login,
 }

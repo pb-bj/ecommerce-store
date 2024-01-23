@@ -1,9 +1,9 @@
 import './CartItem.scss';
-import { CartContext } from '../../contexts/CartContext';
 import { useContext } from 'react';
 import { BsCartX } from "react-icons/bs";
-import { Button } from '../index';
 import { RiDeleteBin7Line } from "react-icons/ri";
+import { Button } from '../index';
+import { CartContext } from '../../contexts/CartContext';
 import { Link } from 'react-router-dom';
 
 
