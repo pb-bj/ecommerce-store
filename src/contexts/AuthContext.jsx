@@ -4,9 +4,19 @@ export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
     const [ isLoggedIn, setIsLoggedIn ] = useState(false);
-    const [ token, setToken ] = useState(null);
+    const [ user, setUser ] = useState(null);
+
+    const userLogin = (userName, password) => {
+      if( userName !== '' && password !== '') {
+        setIsLoggedIn(true);
+      }
+    }
+
+    const userLogout = () => {
+      setIsLoggedIn(false);
+    }
   return (
-      <AuthContext.Provider values={{ isLoggedIn, setIsLoggedIn, token, setToken }}>
+      <AuthContext.Provider value={{ userLogin, userLogout, isLoggedIn  }}>
         { children }
       </AuthContext.Provider>
   )

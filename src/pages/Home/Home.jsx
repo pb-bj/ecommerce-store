@@ -1,17 +1,18 @@
 import './Home.scss';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { ProductsContext } from '../../contexts/ProductsContext';
-import { Login, Products } from '../../components';
-import axios from 'axios';
- 
+import { Products } from '../../components';
+import SwiperImage from './SwiperImage'; 
+
 const Home = () => {
   const { products } = useContext(ProductsContext);
+
   return (
     <div className='home'>
         <div className='main-home'>
+        <SwiperImage />
         </div>
        <Products products = {products} />
-       <Login />
     </div>
   )
 }

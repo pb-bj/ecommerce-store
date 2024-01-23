@@ -11,11 +11,11 @@ const SingleProduct = () => {
   const { products} = useContext(ProductsContext);
   const { addToCart } = useContext(CartContext);
   
-  const filteredProduct = products.find((item) => {
-    if( item.id === parseInt(productid)) {
-      return item;
-    } 
-  });
+  const filteredProduct = products.find((item) => item.id === parseInt(productid) );
+    // if( item.id === parseInt(productid)) {
+      // return item;
+    // } 
+  // });
 
 
   const { category, title, price, image, description, rating : { count, rate} } = filteredProduct;
@@ -48,6 +48,7 @@ const SingleProduct = () => {
               <Button
                   label="Add to cart" 
                   className="btn-primary"
+                  style={{ cursor: 'pointer'}}
                   onClick={() => addToCart(filteredProduct.id,filteredProduct)}
               />
             </div>

@@ -1,20 +1,31 @@
 import './Wishlist.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { Button } from '../../components';
 import { FaRegHeart } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
-import { WishListContext } from '../../contexts/WishListContext';
+
 import { useContext } from 'react';
+import { WishListContext } from '../../contexts/WishListContext';
 import { CartContext } from '../../contexts/CartContext';
-import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext'; 
+
+
 const Wishlist = () => {
   const {  wishList, removeWishList } = useContext(WishListContext);
   const {addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
+  // auth context 
+  const { isLoggedIn } = useContext(AuthContext);
+
+  // navigate through the home page
   const handleBackToShopPage = () => {
       navigate('/');
   }
+
+  if( !isLoggedIn ) {
+    navigate('/login')
+  } 
   
   return (
     <section className='wishlist-container'>

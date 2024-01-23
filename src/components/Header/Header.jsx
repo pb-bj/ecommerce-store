@@ -16,7 +16,6 @@ import Search from './Search/Search';
 const Header = () => {
   const [ showSidebar, setShowSidebar ] = useState(false);
   const [ menuOpen, setMenuOpen ] = useState(false);
-  const [ login, setLogin ] = useState(false);
 
   const { cart } = useContext(CartContext);
   const { wishList } = useContext(WishListContext);
@@ -52,10 +51,11 @@ const Header = () => {
           </div>
 
           {/* login-register-details */}
-          <div className='login-register' onClick={() => setLogin(!login)}>
+          <div className='login-register'>
+            <Link to="/login">
               Login/Register
+            </Link>
           </div>
-         { login && <Login /> }
 
           {/* whislist-icons */}
           <div className='whislistIcon'>
