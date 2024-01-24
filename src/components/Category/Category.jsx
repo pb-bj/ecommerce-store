@@ -9,25 +9,36 @@ import { useContext } from 'react';
 
 const Category = ({ header, categoryTitle }) => {
   const { products } = useContext(ProductsContext);
-  // console.log( products)
+  const { addToCart } = useContext(CartContext);
+
     const maxLength = 25;
     const ellipsis = '....';
-  
-  const { addToCart } = useContext(CartContext);
 
     // filtering the products based on categories
     const filterByProductCategory = products.filter((product) => {
       return product.category === categoryTitle;
     });
 
-    console.log(filterByProductCategory);
+    // product count
+    const totalProductCount = filterByProductCategory.length;
+
+    const handleFilter = () => {
+      const lowestPrice = filterByProductCategory.filter((item) => item.price < 55);
+        return lowestPrice;
+    }
+
+    console.log(handleFilter())
 
   return (
     <div className='category-container'>
         <h2 className='category-header'>{ header }</h2>
+        <p>Available products: ({totalProductCount})</p>
         <div className="category-wrapper">
           <aside className="category-left">
-              <p>filter Options</p>
+              <p>filter</p>
+              <button onClick={ handleFilter }>
+                  Lower
+              </button>
           </aside>
           <div className="category-right">
                <div className='product-items'>

@@ -7,7 +7,7 @@ import { CartContext } from '../../contexts/CartContext';
 import { Link } from 'react-router-dom';
 
 
-const CartItem = () => {
+const CartItem = ({ setShowSidebar }) => {
     const { cart, deleteCartItem } = useContext( CartContext );
   return (
     <>
@@ -49,7 +49,9 @@ const CartItem = () => {
                 </div>
                 <span style={{ fontSize : '15px', marginBottom: '15px', fontWeight: '600', color:'#000' }}>No products in cart</span>
                 <div>
-                    <Button label="RETURN TO SHOP" className="btn-primary" />
+                    <Link to='/'>
+                    <Button label="RETURN TO SHOP" className="btn-primary" onClick={() => setShowSidebar(false)} />
+                    </Link>
                 </div>
             </div>
     }

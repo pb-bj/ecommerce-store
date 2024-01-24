@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import { Home, SingleProduct, Wishlist, Cart, NotFoundPage, Electronics, Men, Women } from './pages/index';
+import { Home, SingleProduct, Wishlist, Cart, NotFoundPage, Electronics, Men, Women, Jewelery } from './pages/index';
 import { Header, Footer, Login } from './components/index';
 import { useContext } from "react";
 import { AuthContext } from "./contexts/AuthContext";
@@ -23,6 +23,7 @@ const App = () => {
           {/* category pages  */}
           <Route path="/category/men" element={<Men/>} />
           <Route path="/category/women" element={<Women />} />
+          <Route path="/category/jewelery" element={<Jewelery />} />
           <Route path="/category/electronics" element={<Electronics />} />
 
           {/* page not found */}

@@ -35,7 +35,7 @@ const Header = () => {
           <div className='hamBurger-menu' onClick={() => setMenuOpen(!menuOpen)} >
             { menuOpen ? < IoMdClose className='menu'/> : <IoMdMenu className='menu'/> } 
           </div>
-          { menuOpen && <MobileNavbar />}
+          { menuOpen && <MobileNavbar setMenuOpen={setMenuOpen} />}
 
           {/* main-menu  */}
           {/* logo */}

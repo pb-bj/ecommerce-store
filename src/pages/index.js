@@ -6,6 +6,7 @@ import NotFoundPage from "./NotFoundPage";
 import Men from "./Categories/Men/Men";
 import Women from "./Categories/Women/Women";
 import Electronics from "./Categories/Electronics/Electronics";
+import Jewelery from "./Categories/Jewelery/Jewelery";
 
 export {
     Home,
@@ -16,4 +17,5 @@ export {
     Men,
     Women,
     Electronics,
+    Jewelery,
 }

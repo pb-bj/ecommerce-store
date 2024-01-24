@@ -14,7 +14,7 @@ const Slidebar = ({ setShowSidebar} ) => {
                 </div>        
             </div>
             <div>
-                <CartItem />
+                <CartItem  setShowSidebar={setShowSidebar} />
             </div>
             
     </div>

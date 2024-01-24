@@ -12,6 +12,7 @@ const Home = () => {
         <div className='main-home'>
         <SwiperImage />
         </div>
+        <h2 className='title'>All Category</h2>
        <Products products = {products} />
     </div>
   )
