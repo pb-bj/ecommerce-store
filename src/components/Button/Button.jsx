@@ -1,11 +1,6 @@
 import './Button.scss'
-// import { useNavigate } from 'react-router-dom'
 
 const Button = ({ label, onClick, type='button', className, }) => {
-  // const navigate = useNavigate();
-  // const handleBackToHomePage = () => {
-  //     navigate('/')
-  // }
   return (
     <button
         className={ className } 

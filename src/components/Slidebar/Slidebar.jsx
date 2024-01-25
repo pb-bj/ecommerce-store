@@ -13,7 +13,7 @@ const Slidebar = ({ setShowSidebar} ) => {
                     <IoMdClose onClick={() => setShowSidebar(false)} /> 
                 </div>        
             </div>
-            <div>
+            <div className='slidebar-inner-cart'>
                 <CartItem  setShowSidebar={setShowSidebar} />
             </div>
             

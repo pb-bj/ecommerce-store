@@ -16,30 +16,34 @@ const Products = ({ products }) => {
             
             return (
               <div key={id} className='main-product'>
+                  <Link to={`/product/${id}`}>
+
                 <div className="product-top">
                     <div className='product-image'>
                       <img src={image} alt="" />
                     </div>
                 </div>
+                {/* product-bottom */}
+                </Link>
                 <div className='product-bottom'>
-                  <Link to={`/product/${id}`}>
                     <div className='product-title'>
                       { title.length <= maxLength?  title : title.substring(0, maxLength - ellipsis.length) + ellipsis  }
                     </div>
-                  </Link>
-                  <div className='bottom-product-content'>
-                    <div className='product-priceTag'>$ {price}</div>
-                    <div className='product-btn' title='add to cart'>
-                      <Button 
-                        label="+" 
-                        className="btn-primary" 
-                        type='button'
-                        onClick={ () => addToCart(id, product) } 
-                      /> 
-                    </div>
-                  </div>
+
+                      <div className='bottom-product-content'>
+                        <div className='product-priceTag'>$ {price}</div>
+                            <div className='product-btn' title='add to cart'>
+                              <Button 
+                                label="+" 
+                                className="btn-primary" 
+                                type='button'
+                                onClick={ () => addToCart(id, product) } 
+                              /> 
+                            </div>
+                      </div>
                 </div>
-                </div>
+
+              </div>
             )
         })}
     </div>

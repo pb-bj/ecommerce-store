@@ -68,13 +68,6 @@ const Cart = () => {
                       <p>Subtotal</p>
                       <p>Rs {(totalCartAmount).toFixed(2)}</p>
                     </div>
-                    {/* <div className='coupon-section'>
-                      <input type="text" />
-                      <span>Apply Coupon</span>
-                    </div> */}
-                      {/* <div style={{ fontSize: '12px', color :'gray', fontWeight: '400', paddingBottom: '10px'  }}>
-                        Have a discount coupon? Get more discount offers
-                      </div> */}
                     <div>
                       <Button label='PROCEED TO CHECKOUT' className='btn-secondary'/>
                     </div>

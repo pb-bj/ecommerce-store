@@ -1,7 +1,8 @@
 @import '../../styles/mixins.scss';
 
 .home {
-    margin: 0px 18px 10px 18px;
+    // margin: 0px 18px 10px 18px;
+    overflow: hidden;
 
         .main-home {
             display: flex;

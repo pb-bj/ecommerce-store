@@ -2,7 +2,7 @@ export const data = [
     {
          id : 1,
          title : 'men',
-         src : 'https://images.pexels.com/photos/5739161/pexels-photo-5739161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+         src : 'https://images.pexels.com/photos/3760274/pexels-photo-3760274.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     }, 
     {
          id : 2,

@@ -37,7 +37,7 @@ const CartItem = ({ setShowSidebar }) => {
 
                 <div className='cart-btn'>
                     <Link to="/cart">
-                    <div className='vc-btn'>
+                    <div className='vc-btn' onClick={() => setShowSidebar(false)}>
                             <Button label="View Cart" type='button' className="btn-primary btn-secondary" />
                     </div>
                     </Link>

@@ -27,7 +27,6 @@ const Header = () => {
   }, 0)
 
   const countWishList = wishList.reduce((count) => count + 1,0 );
-  // console.log(wishList)
   return (
     <header className='header'>
       <nav className='nav-menu'>

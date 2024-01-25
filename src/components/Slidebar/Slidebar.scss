@@ -14,7 +14,6 @@
     @include md { width: 455px; }
     @include lg {
         width: 500px;
-        // padding: 20px 25px;
     }
 
     .heading {
@@ -40,6 +39,10 @@
             font-size: 25px;
         }
 
+    }
+    .slidebar-inner-cart {
+       overflow-y: scroll;
+       height: 500px;
     }
 
    
