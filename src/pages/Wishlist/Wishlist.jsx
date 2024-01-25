@@ -40,7 +40,7 @@ const Wishlist = () => {
             <div className='right'>
               <div className='icon' onClick={() => removeWishList(id)}><IoMdClose /></div>
               <div>{price}</div>
-              <div onClick={() => addToCart(id,product)}>
+              <div onClick={() => addToCart(item.id,item)}>
                 <Button label="Add to cart" className="btn-primary" />
               </div>
             </div>

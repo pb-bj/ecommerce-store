@@ -1,4 +1,11 @@
 import { createContext, useState } from "react";
+// import 'react-toastify/dist/ReactToastify.css';
+// import { toast } from 'react-toastify';
+
+// toast.configure({
+//   position: 'top-center',
+//   autoClose: 3000,
+// });
 
 export const CartContext = createContext();
 
@@ -7,8 +14,6 @@ const CartProvider = ({ children }) => {
 
   const addToCart = (id, product) => {
     const newItem = {...product, quantity: 1};
-    console.log(newItem);
-
     const existingItem = [...cart].find((item) => item.id === id );
         if( existingItem ) {
             const cartItem = [...cart].map((item) => {
@@ -20,10 +25,10 @@ const CartProvider = ({ children }) => {
                 }
             })
             setCart(cartItem);
-            console.log(cartItem);
         }  else {
             setCart([...cart, newItem] )
         }
+        //  toast.success('added to cart');
   }
 
   const deleteCartItem = (id) => {

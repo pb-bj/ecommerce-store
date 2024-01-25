@@ -4,7 +4,7 @@ import { ProductsContext } from '../../contexts/ProductsContext';
 import { CartContext } from '../../contexts/CartContext';
 import {  Button } from '../index'
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 const Category = ({ header, categoryTitle }) => {
   const { products } = useContext(ProductsContext);
@@ -12,6 +12,8 @@ const Category = ({ header, categoryTitle }) => {
 
     const maxLength = 25;
     const ellipsis = '....';
+
+      const [sortOrder, setSortOrder] = useState('lower-higher')
 
     // filtering the products based on categories
     const filterByProductCategory = products.filter((product) => {
@@ -21,9 +23,16 @@ const Category = ({ header, categoryTitle }) => {
     // product count
     const totalProductCount = filterByProductCategory.length;
 
-    const handleFilter = () => {
-      const lowestPrice = filterByProductCategory.filter((item) => item.price < 55);
-        return lowestPrice;
+    const sortedProduct = filterByProductCategory.sort((a,b) => {
+      if( sortOrder === 'lower-higher') {
+        return a.price - b.price;
+      } else {
+        return b.price - a.price;
+      }
+    })
+
+    const handleSortedProduct = () => {
+      setSortOrder((prev) => (prev === 'lower-higher')? 'higher-lower' : 'lower-higher');
     }
 
   return (
@@ -33,13 +42,11 @@ const Category = ({ header, categoryTitle }) => {
         <div className="category-wrapper">
           <aside className="category-left">
               <p>filter</p>
-              <button onClick={ handleFilter }>
-                  Lower
-              </button>
+          <button onClick={ handleSortedProduct }>{sortOrder}</button>
           </aside>
           <div className="category-right">
                <div className='product-items'>
-        { filterByProductCategory.map((product) => {
+        { sortedProduct.map((product) => {
             const { id, title, image, price } = product;
             
             return (

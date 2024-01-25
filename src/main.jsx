@@ -5,11 +5,13 @@ import './index.scss';
 import  ProductsProvider from './contexts/ProductsContext.jsx';
 import CartProvider from './contexts/CartContext.jsx';
 import WishListProvider from './contexts/WishListContext.jsx';
-import AuthProvider from './contexts/AuthContext.jsx';
+
+// import { ToastContainer } from 'react-toastify';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
+    {/* <ToastContainer > */}
       <WishListProvider >
         <CartProvider>
             <ProductsProvider>
@@ -17,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             </ProductsProvider>
         </CartProvider>
       </WishListProvider>
-    </AuthProvider>
+      {/* </ToastContainer> */}
   </React.StrictMode>,
 )
 
