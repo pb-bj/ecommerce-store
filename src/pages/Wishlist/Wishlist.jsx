@@ -7,7 +7,6 @@ import { IoMdClose } from "react-icons/io";
 import { useContext } from 'react';
 import { WishListContext } from '../../contexts/WishListContext';
 import { CartContext } from '../../contexts/CartContext';
-import { AuthContext } from '../../contexts/AuthContext'; 
 
 
 const Wishlist = () => {
@@ -15,17 +14,11 @@ const Wishlist = () => {
   const {addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
-  // auth context 
-  const { isLoggedIn } = useContext(AuthContext);
 
   // navigate through the home page
   const handleBackToShopPage = () => {
       navigate('/');
   }
-
-  if( !isLoggedIn ) {
-    navigate('/login')
-  } 
   
   return (
     <section className='wishlist-container'>

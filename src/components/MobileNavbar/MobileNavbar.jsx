@@ -7,7 +7,6 @@ const MobileNavbar = ({setMenuOpen }) => {
   const [  shopMenu, setShopMenu ] = useState(false);
   return (
     <div className='mobile-navbar'>
-        <div><Link to="/" style={{ color : '#FFF'}} onClick={() => setMenuOpen(false)}>OUTLETS</Link></div>
         <div className='shop-items' onClick={() => setShopMenu(!shopMenu)}>
             <Link 
                 to="/" 
@@ -29,7 +28,6 @@ const MobileNavbar = ({setMenuOpen }) => {
                )}
           </div>
         <div><Link to="/wishlist" style={{ color : '#FFF'}} onClick={() => setMenuOpen(false) }>WISHLIST</Link></div>
-        <div><Link to="/" style={{ color : '#FFF'} } onClick={() => setMenuOpen(false) }>LOGIN / REGISTER</Link></div>
     </div>
   )
 }

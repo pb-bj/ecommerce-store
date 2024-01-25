@@ -6,7 +6,6 @@ import { Button } from '../index';
 import { CartContext } from '../../contexts/CartContext';
 import { Link } from 'react-router-dom';
 
-
 const CartItem = ({ setShowSidebar }) => {
     const { cart, deleteCartItem } = useContext( CartContext );
   return (
@@ -28,8 +27,6 @@ const CartItem = ({ setShowSidebar }) => {
                         <RiDeleteBin7Line 
                             onClick={() => deleteCartItem(id) }
                             style={{ color: '#000', fontSize : '22px'}}/>
-                            
-                            
                     </div>
                 </div>
             )

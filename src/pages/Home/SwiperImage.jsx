@@ -16,16 +16,17 @@ const SwiperImage = () => {
   return (
      <>
       <Swiper
-        spaceBetween={30}
-        autoplay={{
-          delay:2500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination, Autoplay]}
-        className="mySwiper"
+          loop={true}
+          spaceBetween={30}
+          autoplay={{
+            delay:2000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination, Autoplay]}
+          className="mySwiper"
       >
        { data.map((item, index) => (
           <SwiperSlide key={ index } >

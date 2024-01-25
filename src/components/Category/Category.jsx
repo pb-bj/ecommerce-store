@@ -4,7 +4,6 @@ import { ProductsContext } from '../../contexts/ProductsContext';
 import { CartContext } from '../../contexts/CartContext';
 import {  Button } from '../index'
 import { Link } from 'react-router-dom';
-
 import { useContext } from 'react';
 
 const Category = ({ header, categoryTitle }) => {
@@ -27,8 +26,6 @@ const Category = ({ header, categoryTitle }) => {
         return lowestPrice;
     }
 
-    console.log(handleFilter())
-
   return (
     <div className='category-container'>
         <h2 className='category-header'>{ header }</h2>
@@ -47,17 +44,17 @@ const Category = ({ header, categoryTitle }) => {
             
             return (
               <div key={id} className='main-product'>
+                  <Link to={`/product/${id}`}>
                 <div className="product-top">
                     <div className='product-image'>
                       <img src={image} alt="" />
                     </div>
                 </div>
+                  </Link>
                 <div className='product-bottom'>
-                  <Link to={`/product/${id}`}>
                     <div className='product-title'>
                       { title.length <= maxLength?  title : title.substring(0, maxLength - ellipsis.length) + ellipsis  }
                     </div>
-                  </Link>
                   <div className='bottom-product-content'>
                     <div className='product-priceTag'>$ {price}</div>
                     <div className='product-btn' title='add to cart'>

@@ -5,7 +5,7 @@ import { IoMdClose } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa6";
 
 import { Link } from 'react-router-dom';
-import { Login, MobileNavbar, Slidebar } from './../index'
+import {  MobileNavbar, Slidebar } from './../index'
 import { useState, useContext } from 'react';
 
 import { CartContext } from '../../contexts/CartContext';
@@ -49,13 +49,6 @@ const Header = () => {
           </div>
           </div>
 
-          {/* login-register-details */}
-          <div className='login-register'>
-            <Link to="/login">
-              Login/Register
-            </Link>
-          </div>
-
           {/* whislist-icons */}
           <div className='whislistIcon'>
             <Link to="/wishlist" style={{ color: '#FFF'}}>
@@ -75,7 +68,6 @@ const Header = () => {
       </nav>
 
               { showSidebar && <Slidebar setShowSidebar={setShowSidebar} /> }
-      {/* <Slidebar /> */}
     </header>
   )
 }
