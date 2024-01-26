@@ -1,8 +1,11 @@
 @import '../../styles/mixins.scss';
 
 footer {
-    margin: 70px 18px 10px 18px;
-    // border: 1px solid red;
+    // margin: 70px 18px 10px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 0 auto;
     padding-top: 50px ;
         @include md {
             padding-top: 0;

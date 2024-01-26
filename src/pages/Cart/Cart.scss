@@ -26,11 +26,16 @@
 
             .cart-wrapper {
                 display: flex;
+                flex-direction:column ;
+                text-align: center;
+                gap: 10px;
                 margin-bottom: 40px;
                 justify-content: space-evenly;
 
-                @include lg {
+                @include md {
                     justify-content: space-between;
+                    flex-direction:row ;
+                    gap: 0;
                 }
 
                 // gap: 10px;
@@ -45,6 +50,7 @@
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
+                    text-align: center;
 
                     .cart-title {
                         font-size: 15px;
