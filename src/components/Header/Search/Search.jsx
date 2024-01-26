@@ -1,14 +1,9 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
+import './Search.scss';
 
 const Search = ({ products }) => {
     const [ searchQuery, setSearchQuery ] = useState('');
-    // const [ showResult, setShowResult ] = useState(true);
-
-    const handleSearch = (e) => {
-      setSearchQuery(e.target.value);
-      // setShowResult(false);
-    }
     
     // search functionality
     const filteredProducts = (searchQuery === '')? [] : products.filter((product) => {
@@ -21,9 +16,8 @@ const Search = ({ products }) => {
     <input 
         type="search" 
         placeholder="Search for products"
-        onChange={ handleSearch }
+        onChange={ (e) => setSearchQuery(e.target.value) }
     />
-     {/* { showResult && (  */}
       <ul className="product">
           { filteredProducts.map((product) => (
               <Link to={`/product/${product.id}`}> {/* for routing single page */}

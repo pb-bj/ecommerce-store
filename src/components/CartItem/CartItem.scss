@@ -23,6 +23,16 @@
             width: 270px;
             color: #000;
         }
+
+        .flex-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+                .cart-quantity {
+                    color: #000;
+                }
+        }
     }
 
 }

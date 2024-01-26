@@ -1,11 +1,11 @@
 import './Cart.scss';
 import { useContext } from 'react';
-import { CartContext } from '../../contexts/CartContext';
 import { FiTrash } from "react-icons/fi";
 import { IoBookmarkOutline } from "react-icons/io5";
 import { Button } from '../../components';
-import { WishListContext } from '../../contexts/WishListContext';
 
+import { CartContext } from '../../contexts/CartContext';
+import { WishListContext } from '../../contexts/WishListContext';
 
 const Cart = () => {
   const { cart, deleteCartItem, incrementCart, decreaseCart } = useContext(CartContext);

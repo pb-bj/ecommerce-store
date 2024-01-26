@@ -52,8 +52,7 @@
         }
 
         .searchBox-Wrapper {
-            display: none;
-                @include lg { display: block; }
+        
         .searchBox {
             display: flex;
             align-items: center;
@@ -61,16 +60,29 @@
             
             input {
                 position: relative;
-                width: 502px;
+                // width: 502px;
+                width: 175px;
                 padding: 8px 17px;
                 outline: none;
+                @include md {
+                    width: 270px;
+                }
+                @include lg {
+                    width: 502px;
+                }
             }
             .product {
                 position: absolute;
                 top: 39px;
                 background-color: white;
-                max-width: 500px;
+                max-width: 175px;
                 width: 100%;
+                @include md {
+                    max-width: 268px;
+                }
+                    @include lg {
+                        max-width: 500px;
+                    }
 
                 .searchedProducts {
                     display: flex;
@@ -85,20 +97,29 @@
                             background: #fafafa;
                         }
 
+                        .image {
+                            display: none;
+                                    @include lg { display: block}
+                        }
+
                     .searched-title {
-                        font-size: 15px;
+                        font-size: 12px;
                         font-weight: 400;
                         width: 100%;
-                        max-width: 320px;
+                        max-width: 150px;
+                            @include lg {
+                                        font-style: 15px;
+                                        max-width: 320px;
+                            }
                     }
                     
                 } 
-            }
+            } // product end
     }
 }
 
         .logo {
-            font-size: 18px;
+            font-size: 16px;
                 @include lg {
                     font-size: 20px;
                     display: flex;

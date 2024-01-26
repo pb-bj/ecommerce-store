@@ -13,7 +13,7 @@ const CartItem = ({ setShowSidebar }) => {
     { cart.length > 0 ? (
         <>
         { cart.map((item) => {
-            const {id, title, image, price } = item;
+            const {id, title, image, price, quantity } = item;
             return (
                 <div key={id} className='cart-item'>
                     <div className='cart-image'>
@@ -21,8 +21,11 @@ const CartItem = ({ setShowSidebar }) => {
                     </div>
                     <div className='cart-content'>
                         <div className='cart-title'>{title}</div>
-                        <div>{price}</div>
+                        <div className='flex-group'>
+                        <div className='cart-price'>${price}</div>
+                        <div className='cart-quantity'> X {quantity}</div>
                     </div>
+                        </div>
                     <div title='remove'>
                         <RiDeleteBin7Line 
                             onClick={() => deleteCartItem(id) }

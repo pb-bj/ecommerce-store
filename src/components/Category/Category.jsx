@@ -10,10 +10,11 @@ const Category = ({ header, categoryTitle }) => {
   const { products } = useContext(ProductsContext);
   const { addToCart } = useContext(CartContext);
 
-    const maxLength = 25;
-    const ellipsis = '....';
+  const [sortOrder, setSortOrder] = useState('lower-higher');
 
-      const [sortOrder, setSortOrder] = useState('lower-higher')
+  const maxLength = 25;
+  const ellipsis = '....';
+
 
     // filtering the products based on categories
     const filterByProductCategory = products.filter((product) => {
@@ -23,6 +24,7 @@ const Category = ({ header, categoryTitle }) => {
     // product count
     const totalProductCount = filterByProductCategory.length;
 
+    //product sorting base on price
     const sortedProduct = filterByProductCategory.sort((a,b) => {
       if( sortOrder === 'lower-higher') {
         return a.price - b.price;
@@ -41,8 +43,13 @@ const Category = ({ header, categoryTitle }) => {
         <p>Available products: ({totalProductCount})</p>
         <div className="category-wrapper">
           <aside className="category-left">
-              <p>filter</p>
-          <button onClick={ handleSortedProduct }>{sortOrder}</button>
+            <div className='left-inner'>
+              <div>Filter product by price :</div>
+              <div>
+                <Button onClick={ handleSortedProduct } label={sortOrder} className='btn-primary'/>
+              </div>
+            </div>
+
           </aside>
           <div className="category-right">
                <div className='product-items'>
