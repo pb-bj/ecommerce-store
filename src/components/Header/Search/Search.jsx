@@ -21,23 +21,19 @@ const Search = ({ products }) => {
         } }
     />
       <ul className="product">
-          { (searchQuery.trim() !== '' || searchQuery !== filteredProducts.title )? filteredProducts.map((product) => (
+          { (searchQuery.trim() !== '' )? filteredProducts.map((product) => (
               <Link to={`/product/${product.id}`}> {/* for routing single page */}
-              <li key={product.id} className="searchedProducts">
-              <div className="image">
-                <img src={product.image} alt="" width={55} />
-              </div>
-                <div 
-                  onClick={() => setSearchQuery('')}
-                  className="searched-title" 
-                  style={{ color: '#000'}}>
-                    {product.title}
-                </div>
+              <li key={product.id} className="searchedProducts" onClick={() => setSearchQuery('')}>
+                  <div className="image">
+                    <img src={product.image} alt="" width={55} />
+                  </div>
+                    <div className="searched-title" style={{ color: '#000'}}>{product.title}</div>
               </li>
               </Link>
           )) 
           : (
-            <div className="search-not-found"> no product found</div>
+            // <div className="search-not-found"> no product found</div>
+            <></>
           )}
         </ul>
       

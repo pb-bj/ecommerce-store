@@ -22,11 +22,11 @@ const Header = () => {
   const { products } = useContext(ProductsContext);
   
   // cart and wishlist product counter 
-  const countCart = cart.reduce((acc, curr) => {
-    return acc + curr.quantity;
-  }, 0)
+  const countCart = cart? cart.reduce((acc, curr) => {
+    return acc + (curr?.quantity ?? 0);
+  }, 0) : 0
 
-  const countWishList = wishList.reduce((count) => count + 1,0 );
+  const countWishList = wishList.reduce((count, curr) => count + 1,0 );
   return (
     <header className='header'>
       <nav className='nav-menu'>

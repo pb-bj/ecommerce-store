@@ -1,6 +1,9 @@
 import './SingleProduct.scss';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
+  import { toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 
 import { ProductsContext } from '../../contexts/ProductsContext';
 import { CartContext } from '../../contexts/CartContext';
@@ -9,15 +12,22 @@ import { LiaStarSolid } from "react-icons/lia";
 import Button from '../../components/Button/Button';
 
 const SingleProduct = () => {
+  // const notify = () => {
+  //   toast('Product added')
+  // }
   const { productid } = useParams();
   const { products} = useContext(ProductsContext);
-  const { addToCart,  incrementCart, decreaseCart  } = useContext(CartContext);
-  console.log(products)
+  const { addToCart } = useContext(CartContext);
 
   const filteredProduct = products.find((item) => item.id === parseInt(productid) );
 
-  const { title, price, image, description, rating : { count, rate} } = filteredProduct;
-  console.log(filteredProduct)
+  // for cart quantity
+  // const cartItem = cart?.find((item) => item?.id === filteredProduct?.id);
+  // const cartQuantity = cartItem?.quantity || 0
+  //   console.log('quantity :', cartQuantity)
+
+  const {id, category, title, price, image, description, rating : { count, rate} } = filteredProduct ?? { rating : {}}; // optional chaining for the case of undefined
+  // console.log(filteredProduct)
   return ( 
     <div style={{ marginTop : '100px'}}>
       <div className="product-container">
@@ -25,7 +35,7 @@ const SingleProduct = () => {
           <img src={image} alt="" />
         </div>
         <div className="product-content-right">
-          <span className="product-category">Category: {filteredProduct.category}</span>
+          <span className="product-category">Category: {category}</span>
           <div className="product-title">{title}</div>
           <div className="details">
             <div className='product-wrapper'>
@@ -43,17 +53,14 @@ const SingleProduct = () => {
             </div>
 
             </div>
-            <div>
-              <span onClick={() => decreaseCart(filteredProduct.id)}>-</span>
-              {/* <span>{ cartquantity}</span> */}
-              <span onClick={() => incrementCart(filteredProduct.id)}>+</span>
-            </div>
             <div style={{ margin: '10px 0px'}}>
               <Button
                   label="Add to cart" 
                   className="btn-primary"
                   style={{ cursor: 'pointer'}}
-                  onClick={() => addToCart(filteredProduct.id, filteredProduct)}
+                  onClick={() => { 
+                    addToCart(id, filteredProduct)
+                  }}
               />
             </div>
               <div className="product-description">

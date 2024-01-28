@@ -10,7 +10,7 @@ const CartItem = ({ setShowSidebar }) => {
     const { cart, deleteCartItem } = useContext( CartContext );
   return (
     <>
-    { cart.length > 0 ? (
+    { cart && cart.length > 0 ? (
         <>
         { cart.map((item) => {
             const {id, title, image, price, quantity } = item;
