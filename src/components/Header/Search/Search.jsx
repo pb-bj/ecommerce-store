@@ -6,7 +6,7 @@ const Search = ({ products }) => {
     const [ searchQuery, setSearchQuery ] = useState('');
     
     // search functionality
-    const filteredProducts = (searchQuery === '')? [] : products.filter((product) => {
+    const filteredProducts = (searchQuery === '' )? [] : products.filter((product) => {
        return product.title.toLowerCase().includes( searchQuery.toLowerCase()) || 
                 product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 product.category.toLowerCase().includes(searchQuery.toLowerCase());
@@ -16,25 +16,20 @@ const Search = ({ products }) => {
     <input 
         type="search" 
         placeholder="Search for products"
-        onChange={ (e) => {
-          setSearchQuery(e.target.value) 
-        } }
+        value={searchQuery}
+        onChange={ (e) => setSearchQuery(e.target.value) }
     />
       <ul className="product">
-          { (searchQuery.trim() !== '' )? filteredProducts.map((product) => (
+          {  filteredProducts.map((product) => (
               <Link to={`/product/${product.id}`}> {/* for routing single page */}
-              <li key={product.id} className="searchedProducts" onClick={() => setSearchQuery('')}>
-                  <div className="image">
-                    <img src={product.image} alt="" width={55} />
-                  </div>
-                    <div className="searched-title" style={{ color: '#000'}}>{product.title}</div>
-              </li>
+                  <li key={product.id} className="searchedProducts" onClick={() => setSearchQuery('')}>
+                      <div className="image">
+                        <img src={product.image} alt="" width={55} />
+                      </div>
+                        <div className="searched-title" style={{ color: '#000'}}>{product.title}</div>
+                  </li>
               </Link>
-          )) 
-          : (
-            // <div className="search-not-found"> no product found</div>
-            <></>
-          )}
+            ))}
         </ul>
       
     </>

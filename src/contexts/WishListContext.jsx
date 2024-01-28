@@ -20,9 +20,9 @@ const WishListProvider = ({ children }) => {
     }
 
     const removeWishList = (id) => {
-      const updatedItem = wishList.filter((item) => item.id !== id);
+      const updatedWishList = wishList.filter((item) => item.id !== id);
       // alert(`Item was removes`)
-        setWishList(updatedItem);
+        setWishList(updatedWishList);
         toast.error('Removed from wishlist')
     }
   return (

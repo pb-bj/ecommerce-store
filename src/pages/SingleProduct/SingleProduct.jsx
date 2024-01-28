@@ -1,23 +1,19 @@
 import './SingleProduct.scss';
+import { IoBookmarkOutline } from "react-icons/io5";
+import { LiaStarSolid } from "react-icons/lia";
+
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-  import { toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-
-
+import { WishListContext } from '../../contexts/WishListContext';
 import { ProductsContext } from '../../contexts/ProductsContext';
 import { CartContext } from '../../contexts/CartContext';
 
-import { LiaStarSolid } from "react-icons/lia";
 import Button from '../../components/Button/Button';
 
 const SingleProduct = () => {
-  // const notify = () => {
-  //   toast('Product added')
-  // }
   const { productid } = useParams();
   const { products} = useContext(ProductsContext);
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, cart} = useContext(CartContext);
 
   const filteredProduct = products.find((item) => item.id === parseInt(productid) );
 
@@ -26,7 +22,7 @@ const SingleProduct = () => {
   // const cartQuantity = cartItem?.quantity || 0
   //   console.log('quantity :', cartQuantity)
 
-  const {id, category, title, price, image, description, rating : { count, rate} } = filteredProduct ?? { rating : {}}; // optional chaining for the case of undefined
+  const {id, category, title, price, image, description, rating : { count, rate} } = filteredProduct ?? { rating : {} }; // optional chaining for the case of undefined
   // console.log(filteredProduct)
   return ( 
     <div style={{ marginTop : '100px'}}>

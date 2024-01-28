@@ -1,10 +1,12 @@
 import './MobileNavbar.scss';
 import { Link } from 'react-router-dom';
 import { mobileNavData } from '../../data/mobileNavData';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { WishListContext } from '../../contexts/WishListContext';
 
 const MobileNavbar = ({setMenuOpen }) => {
   const [  shopMenu, setShopMenu ] = useState(false);
+  const { wishList } = useContext(WishListContext);
   return (
     <div className='mobile-navbar'>
         <div className='shop-items' onClick={() => setShopMenu(!shopMenu)}>
@@ -27,7 +29,7 @@ const MobileNavbar = ({setMenuOpen }) => {
               </div>
                )}
           </div>
-        <div><Link to="/wishlist" style={{ color : '#FFF'}} onClick={() => setMenuOpen(false) }>WISHLIST</Link></div>
+        <div><Link to="/wishlist" style={{ color : '#FFF'}} onClick={() => setMenuOpen(false) }>WISHLIST ({wishList.length})</Link></div>
     </div>
   )
 }
