@@ -10,13 +10,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <WishListProvider >
-        <CartProvider>
-            <ProductsProvider>
-                <App />
-            </ProductsProvider>
-        </CartProvider>
-      </WishListProvider>
+      <ProductsProvider>
+        <WishListProvider >
+          <CartProvider>
+                  <App />
+          </CartProvider>
+        </WishListProvider>
+        </ProductsProvider>
       <ToastContainer autoClose={1000} hideProgressBar={true}/>
   </React.StrictMode>,
 )

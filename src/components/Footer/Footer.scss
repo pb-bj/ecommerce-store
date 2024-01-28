@@ -7,13 +7,14 @@ footer {
     justify-content: center;
     max-width: 0 auto;
     padding-top: 50px ;
-    margin-top: 60px;
+    // margin-top: 60px;
     padding: 25px 10px 0 10px;
-        @include md {
-            padding-top: 0px;
-        }
-     p{
+        p {
         color: rgb(124, 124, 124);
         font-weight: 400;
-     }
+        }
+            @include md {
+                padding-top: 0px;
+
+            }
 }

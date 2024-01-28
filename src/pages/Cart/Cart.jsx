@@ -1,7 +1,8 @@
 import './Cart.scss';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { FiTrash } from "react-icons/fi";
-import { IoBookmarkOutline } from "react-icons/io5";
+import { MdFavorite } from "react-icons/md";
+
 import { Button } from '../../components';
 
 import { CartContext } from '../../contexts/CartContext';
@@ -9,7 +10,8 @@ import { WishListContext } from '../../contexts/WishListContext';
 
 const Cart = () => {
   const { cart, deleteCartItem, incrementCart, decreaseCart } = useContext(CartContext);
-  const { addToWishList, wishList } = useContext(WishListContext);
+  const { addToWishList } = useContext(WishListContext);
+  const [ wishlistColor, setWishlistColor ] = useState(null);
 
 // total cart amount 
   const totalCartAmount = cart.reduce((acc, curr) => {
@@ -49,8 +51,13 @@ const Cart = () => {
                         <div onClick={() => deleteCartItem(item.id)} > 
                           <FiTrash/>
                         </div>
-                        <div title='add to whishlist' onClick={() => addToWishList(item.id, cart, wishList)}>
-                          <IoBookmarkOutline />
+                        <div title='add to whishlist' 
+                            onClick={() => {
+                                addToWishList(item.id)
+                                setWishlistColor('red');
+                            }}
+                            >  
+                          <MdFavorite style={{ color : wishlistColor}} />
                         </div>
                         <div>
 

@@ -1,29 +1,29 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { ProductsContext } from "./ProductsContext";
 
 export const WishListContext = createContext();
 
 const WishListProvider = ({ children }) => {
-    const [ wishList, setWishList ] = useState([]);
+  const [ wishList, setWishList ] = useState([]);
+  const { products } = useContext(ProductsContext);
     
-    const addToWishList = (id, cart, wishList) => {     
-       const updatedItem = cart.find((item) => item.id === id); 
-        if( !updatedItem ) return alert('Item didnt found');
+  const addToWishList = (id) => {
+    // checking for the wishlist items in cart
+    const productInWishlist = products.find((item) => item.id === id);
+      if(!productInWishlist) return toast.error('Product not found');
 
-        // existed item in wishlist
-        const existingItem = wishList.some((item) => item.id === id);
-          if( existingItem) return toast.info('Product already exist')
-           setWishList([...wishList, updatedItem]);
-          toast.success('Added to wishlist');
-            
-    }
+       // checking for exisiting item in wishlist 
+    const isProductInWishlist = wishList.some((item) => item.id === id )
+      if( isProductInWishlist) return toast.info('Product already exist in wishlist');
+        setWishList([...wishList, productInWishlist]);
+          toast.success('Added to Wishlist');
+  }
 
     const removeWishList = (id) => {
-      const updatedWishList = wishList.filter((item) => item.id !== id);
-      // alert(`Item was removes`)
-        setWishList(updatedWishList);
-        toast.error('Removed from wishlist')
+      setWishList((prevWishList) => prevWishList.filter((item) => item.id !== id));
+        toast.error('Removed from wishlist');
     }
   return (
     <WishListContext.Provider value={{ addToWishList, wishList, removeWishList }}>

@@ -2,18 +2,19 @@
 
 .product-container {
     margin: 70px 18px 10px 18px;
-    height: 440px;
+    height: 650px;
     display: flex;
     flex-direction:column;
     align-items: center;
     justify-content: space-between;
     padding-top: 40px;
-    gap: 20px;
+    gap: 0px;
     @include md {
         flex-direction: row;
         max-width: 800px;
         width: 100%;
         margin: 0 auto;
+        height: 440px;
         gap: 20px;
         }
     .product-content-left {
@@ -68,6 +69,26 @@
                     @include md {
                         gap: 50px;
                         font-size: 16px;
+                    }
+
+                    .wishlist-icon {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                        font-size:20px ;
+                        cursor: pointer;
+                        // color: red;
+                        
+                        p {
+                            display: none;
+                            font-weight: 300;
+                            font-size: 14px;
+                            @include md {
+                                display: block;
+                            }
+                        }
+
                     }
             }
         }
