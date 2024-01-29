@@ -10,8 +10,6 @@
         align-items: center;
         gap: 15px;
         margin: 0 auto;
-        ;
-
         @include lg {
             flex-direction: row;
         }
@@ -38,7 +36,6 @@
                     gap: 0;
                 }
 
-                // gap: 10px;
                 .cart-image {
                     img {
                         width: 100px;
@@ -48,14 +45,18 @@
 
                 .cart-content {
                     display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    text-align: center;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                        @include md {
+                            flex-direction: column;
+                            height: 100px;
+                        }
 
                     .cart-title {
                         font-size: 15px;
                         font-weight: 400;
-                        max-width: 185px;
+                        max-width: 200px;
                         width: 100%;
 
                         @include lg {
@@ -77,13 +78,14 @@
 
                     .cart-counter-top {
                         display: flex;
+                        align-items: center;
+                        justify-content: center;
                         font-size: 16px;
                         gap: 10px;
                             .increaseCounter,
                             .decreaseCounter  {
                                 width: 25px;
-                                background-color: #000;
-                                color:#FFF ;
+                                color:#000 ;
                                 cursor: pointer;
                                 outline: none;
                                 border: none;
@@ -92,7 +94,13 @@
 
                     .cart-counter-bottom {
                         display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-top: 15px;
                         gap: 10px;
+                        @include md {
+                            margin-top: 0;
+                        }
                     }
 
                     .cart-counter-top,
@@ -109,7 +117,6 @@
             width: 100%;
 
             @include lg {
-                // position: fixed;
                 max-width: 400px;
                 width: 100%;
             }
@@ -145,7 +152,5 @@
         }
 
     }
-
-    // empty cart
 
 }

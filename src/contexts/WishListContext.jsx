@@ -9,6 +9,7 @@ const WishListProvider = ({ children }) => {
   const [ wishList, setWishList ] = useState([]);
   const { products } = useContext(ProductsContext);
     
+ // add functionality 
   const addToWishList = (id) => {
     // checking for the wishlist items in cart
     const productInWishlist = products.find((item) => item.id === id);
@@ -21,6 +22,7 @@ const WishListProvider = ({ children }) => {
           toast.success('Added to Wishlist');
   }
 
+  // remove functionality
     const removeWishList = (id) => {
       setWishList((prevWishList) => prevWishList.filter((item) => item.id !== id));
         toast.error('Removed from wishlist');

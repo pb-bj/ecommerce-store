@@ -1,7 +1,6 @@
 @import './../../styles/mixins.scss';
 
 .category-container {
-    // margin-top: 120px;
     margin: 150px 18px 10px 18px;
 
     .category-header {
@@ -28,7 +27,6 @@
        
         .category-left {
             display: flex;
-            // flex-direction: row;
             align-items: center;
             justify-content: space-between;
             gap: 20px;

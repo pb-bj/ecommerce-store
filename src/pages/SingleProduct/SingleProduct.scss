@@ -2,7 +2,6 @@
 
 .product-container {
     margin: 70px 18px 10px 18px;
-    height: 650px;
     display: flex;
     flex-direction:column;
     align-items: center;
@@ -19,7 +18,7 @@
         }
     .product-content-left {
         img {
-            width: 135px;
+            width: 100px;
                 @include md {
                     width: 200px;
                 }

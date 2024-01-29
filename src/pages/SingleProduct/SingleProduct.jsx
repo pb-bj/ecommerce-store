@@ -22,11 +22,6 @@ const SingleProduct = () => {
     return item.id === parseInt(productid);
   });
 
-  // for cart quantity
-  // const cartItem = cart?.find((item) => item?.id === filteredProduct?.id);
-  // const cartQuantity = cartItem?.quantity || 0
-  //   console.log('quantity :', cartQuantity)
-
   const { category, title, price, image, description, rating : { count, rate} } = filteredProduct ?? { rating : {} }; // optional chaining for the case of undefined
 
   return ( 
@@ -57,7 +52,6 @@ const SingleProduct = () => {
                           addToWishList(filteredProduct.id)
                           setWishListColor('red') 
                        }}
-                      // style={{ color : wishListColor }}
                   >
                     <MdFavorite style={{ color : wishListColor}}/> 
                     <p>Add to wishlist</p>
